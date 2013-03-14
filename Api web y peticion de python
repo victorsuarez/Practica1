@@ -1,0 +1,27 @@
+
+PROYECTO LENGUAJE DE MARCAS.
+
+
+
+
+Go Weather Ex.
+
+
+
+La api web que he elegido para que realice la peticion es una que encontre en yahoo sobre aplicaciones del tiempo, y es la siguiente
+
+http://chart.apis.google.com/chart
+
+El tipo de api que utiliza esta aplicación para encontrar la peticion que se le ha encargado es una api tipo REST
+
+Este tipo de apis accede a traves de direcciones webs o URL en las que enviamos los datos de nuestra peticion, una vez realizada esta nos devolvera la respues en un formato xml o json que son los mas comunes.
+
+En este caso la aplicación te devuelve un fichero de salida xml.
+
+El codigo python que realizaria la peticion a la Api web seria el siguiente :
+En esta ocasión hare la peticion de la provincia de Cadiz, la cual tiene el parametro → 772468
+
+import request
+   r= request.get(“http://chart.apis.google.com/chart”,  params = {“w”:”772468”})
+if r.status_code == 200:
+	print r.text
